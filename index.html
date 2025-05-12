@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Demo Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    button {
+      margin: 10px 0;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .hover-box {
+      padding: 20px;
+      background-color: lightblue;
+      width: fit-content;
+      transition: background-color 0.3s;
+    }
+    .hover-box:hover {
+      background-color: lightgreen;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .tab-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Interactive Demo Page</h1>
+
+  <!-- 🎈 Event Handling -->
+  <section>
+    <h2>1. Event Handling </h2>
+    <button id="clickBtn">Click Me</button>
+    <p id="clickText">This text may change when you click the button.</p>
+
+    <div class="hover-box">Hover over me!</div>
+
+    <input type="text" id="keypressInput" placeholder="Type something here..." />
+    <p id="keypressOutput">You typed: </p>
+
+    <button id="secretBtn">Double-click or long press me!</button>
+    <p id="secretMsg" style="display: none;"> Secret action revealed!</p>
+  </section>
+
+  <!-- 🎮 Interactive Elements -->
+  <section>
+    <h2>2. Interactive Elements 🎮</h2>
+
+    <button id="colorBtn">Change My Color</button>
+
+    <div>
+      <h3>Image Gallery</h3>
+      <img id="galleryImg" src="https://shorturl.at/dJ69u" alt="Gallery Image" width="300" />
+      <br />
+      <button id="nextImgBtn">Next Image</button>
+    </div>
+
+    <div>
+      <h3>Tabs</h3>
+      <div class="tabs">
+        <button class="tab-btn" data-tab="1">Tab 1</button>
+        <button class="tab-btn" data-tab="2">Tab 2</button>
+        <button class="tab-btn" data-tab="3">Tab 3</button>
+      </div>
+      <div id="tab1" class="tab-content">📄 Content for Tab 1</div>
+      <div id="tab2" class="tab-content">📄 Content for Tab 2</div>
+      <div id="tab3" class="tab-content">📄 Content for Tab 3</div>
+    </div>
+  </section>
+
+  <!-- 📋✅ Form Validation -->
+  <section>
+    <h2>3. Form Validation </h2>
+    <form id="userForm" novalidate>
+      <label for="email">Email:</label><br/>
+      <input type="email" id="email" name="email" required />
+      <span id="emailError" class="error">Invalid email format</span><br/><br/>
+
+      <label for="password">Password:</label><br/>
+      <input type="password" id="password" name="password" minlength="8" required />
+      <span id="passwordError" class="error">Minimum 8 characters required</span><br/><br/>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+<script src="script.js"></script>
+</body>
+</html>
